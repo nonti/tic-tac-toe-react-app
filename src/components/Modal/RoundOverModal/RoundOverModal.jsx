@@ -34,22 +34,25 @@ const RoundOverModal = () => {
       
       
       <ModalFooter>
-        <Button color="#f9c811" onClick={() => {
+        <Button color="#f9c811"
+          onClick={() => {
           clickSfx()
           handleModal();
           resetBoard();
         }}
-          onMouseOver={() => hoverSfx() }
-        >Continue</Button>
+          onMouseEnter={() => hoverSfx() }
+        >Continue
+        </Button>
         <Button
           color="#8437f9"
-          onclick={() => {
+          onClick={() => {
             completedSfx();
-            restartGame();
+            restartGame()
             handleModal();
             navigate('/');
-
-        }} onMouseOver={() => hoverSfx()}>Restart</Button>
+          }}
+          onMouseEnter={() => hoverSfx()}
+        >Restart</Button>
       </ModalFooter>
     </div>
   );
