@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MdPause, MdPlayArrow, MdSkipNext } from "react-icons/md";
 
 export const MusicPlayerWrapper = styled.div`
   display: flex;
@@ -11,6 +12,18 @@ export const MusicPlayerWrapper = styled.div`
   width: 100vw;
 `
 
-export const PlayIcon = styled.div``
-export const PauseIcon = styled.div``
-export const NextIcon = styled.div``
+export const PlayIcon = styled(MdPlayArrow)`
+  color: ${(props) => props.theme.colors.secondary}
+  font-size: 5rem;
+  cursor: pointer;
+`
+export const PauseIcon = styled(MdPause)`
+  color: ${(props) => props.theme.colors.secondary}
+  font-size: 5rem;
+  cursor: pointer;
+`
+export const NextIcon = styled(MdSkipNext)`
+  color: ${(props) => props.theme.colors.secondary}
+  font-size: 5rem;
+  cursor: pointer;
+`
