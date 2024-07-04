@@ -10,35 +10,37 @@ import { ModalContext } from "../../contexts/modalContext";
 import RoundOverModal from "../Modal/RoundOverModal/RoundOverModal";
 import { SfxContext } from "../../contexts/SfxContexts";
 
-const GameCell = ({ cellItem, index }) => {
+const GameCell = ({ cellItem, index, isWinningCell }) => {
   const { updateBoard, game, roundComplete } = useContext(GameContext);
   const { handleModal } = useContext(ModalContext);
-  const {hoverSfx, clickSfx, winSfx, completedSfx} = useContext(SfxContext );
+  const {hoverSfx, clickSfx, winSfx} = useContext(SfxContext );
 
   const cellClickHandler = () => {
+    console.log(isWinningCell)
     clickSfx();
     updateBoard(index);
     const result = checkForWinner(game.board);
+    console.log(result)
     if (result) {
       roundComplete(result);
       if (result !== 'draw') {
         winSfx();
-      } else {
-        completedSfx();
-      }
+      } 
+      setTimeout(() => {
       handleModal(<RoundOverModal />);
+      }, 2000);
     }
   };
   
   if (cellItem === "x") {
     return (
-      <CellStyle>
-        <IconX className="markedItem" />
+      <CellStyle isWinningCell={ isWinningCell ?? false}>
+        <IconX className="markedItem"  />
       </CellStyle>
     );
   } else if (cellItem === "o") {
     return (
-      <CellStyle>
+      <CellStyle isWinningCell={ isWinningCell ?? false}>
         <IconH className="markedItem" />
       </CellStyle>
     );

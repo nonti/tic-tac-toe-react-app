@@ -9,5 +9,8 @@ export const MusicPlayerWrapper = styled.div`
   position: fixed;
   bottom: 0;
   width: 100vw;
-
 `
+
+export const PlayIcon = styled.div``
+export const PauseIcon = styled.div``
+export const NextIcon = styled.div``

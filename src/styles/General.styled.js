@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: :${(props) => props.columnBased ? 'column': 'row'};
+  flex-direction: ${(props) => (props.columnBased ? 'column': 'row')};
   height: 80vh;
   width: 100vw;
   background-color: ${(props) => props.theme.colors.primary};
@@ -19,19 +19,19 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  color:${(props) => props.primary ? props.theme.colors.primary : props.theme.colors.text};
+  color:${(props) => props.primary ? props.theme.colors.primary : props.theme.colors.secondary};
   font-size: 4rem;
   background: transparent;
   font-family: 'Pacifico',cursive;
 
-   ${(props) => props.theme.media.mobile} {
+  ${(props) => props.theme.media.mobile} {
   font-size: 5rem;
     
   }
 `;
 
 export const Subtitle = styled.h1`
-  color:${(props) => props.primary ? props.theme.colors.primary : props.theme.colors.text};
+  color:${(props) => props.primary ? props.theme.colors.primary : props.theme.colors.secondary};
   font-size: 1.5rem;
   background: transparent;
   font-weight: 200;
@@ -39,7 +39,7 @@ export const Subtitle = styled.h1`
 `;
 
 export const Text = styled.p`
-  color:${(props) => props.primary ? props.theme.colors.primary : props.theme.colors.text};
+  color:${(props) => props.primary ? props.theme.colors.secondary : props.theme.colors.text};
   font-size: 1.2rem;
   background: transparent;
   padding: 10px;

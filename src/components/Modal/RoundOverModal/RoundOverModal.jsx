@@ -29,7 +29,7 @@ const RoundOverModal = () => {
       <ModalBody>
         <Subtitle primary>Choice will be switched now.</Subtitle>
         <Subtitle primary>{game.player1.name} :{  game.player1.score}</Subtitle>
-        <Subtitle  primary>{game.player2.name} :{  game.player2.score}</Subtitle>
+        <Subtitle primary>{game.player2.name} :{  game.player2.score}</Subtitle>
       </ModalBody>
       
       

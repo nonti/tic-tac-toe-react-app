@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CellStyle = styled.div`
-  background-color: ${(props) => props.theme.colors.secondary};
+  background-color: ${(props) => props.isWinningCell ? props.theme.colors.yellow : props.theme.colors.secondary};
   color: ${(props) => props.theme.colors.primary};
   width: 10rem;
   font-size: 3rem;
